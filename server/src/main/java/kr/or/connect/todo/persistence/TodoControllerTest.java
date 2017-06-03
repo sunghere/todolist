@@ -54,11 +54,8 @@ public class TodoControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(requestBody)
         )
-                .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.id").exists())
-                .andExpect(jsonPath("$.todo").value("할일추가 테스트"))
-                .andExpect(jsonPath("$.completed").value("0"))
-                .andExpect(jsonPath("$.date").exists());
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.result").value("SUCS"));
     }
 
     @Test
